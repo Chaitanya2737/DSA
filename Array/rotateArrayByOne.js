@@ -5,13 +5,14 @@ function main() {
   }
   
   function support(array) {
-    let count =  0;
+    firstElement = array[0];
     for (let i = 0; i < array.length; i++) {
-        if (array[i] !== array[i-1]) {
-            count++
-        }
+     array[i-1] = array[i]
     }
-    return count
+
+    array[array.length-1] = firstElement
+
+    return array
   }
   
   main();
