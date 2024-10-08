@@ -1,26 +1,25 @@
-function quickSort(nums, left = 0, right = nums.length - 1) {
-    if (left >= right) return nums;
-
-    let pivotIndex = partition(nums, left, right);
-    quickSort(nums, left, pivotIndex - 1);
-    quickSort(nums, pivotIndex + 1, right);
-
-    return nums;
-}
-
-function partition(arr, left, right) {
-    let pivot = arr[right];
-    let i = left;
-
-    for (let j = left; j < right; j++) {
-        if (arr[j] < pivot) {
-            [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap
-            i++;
-        }
+function quickSort(array , left=0, right=array.length-1){
+    if (left>=right) {
+        return array
     }
-
-    [arr[i], arr[right]] = [arr[right], arr[i]];  // Move pivot to the correct place
-    return i;
+    let pivotIdx = partition(array , left , right)
+    quickSort(array, left , pivotIdx-1)
+    quickSort(array , pivotIdx+1 , right)
+    return array
 }
 
-console.log(quickSort([1, 3, 5, 7, 2, 4, 6, 7]));
+function partition(array , left , right){
+    let pivot = array[right];
+    let i = left
+    for (let j = left; j < right; j++) {
+       if(array[j] < pivot){
+        [array[i] , array[j]]=[array[j] , array[i]]
+        i++
+       }
+    }
+    [array[i] , array[right] ]=[array[right] , array[i] ]
+    return i
+}
+
+
+console.log(quickSort([12,2,3,3,1,6,2]))
