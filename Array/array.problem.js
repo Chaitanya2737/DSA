@@ -1,7 +1,7 @@
 function main() {
   const array = [1,3,5,6,7,8];
   const result = support(array);
-  console.log(result);
+  console.log(this);
 }
 function support(array) {
     

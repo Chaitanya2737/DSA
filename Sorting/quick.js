@@ -17,7 +17,7 @@ function partition(array , left , right){
         i++
        }
     }
-    [array[i] , array[right] ]=[array[right] , array[i] ]
+    [array[i] , array[right]]=[array[right] , array[i]]
     return i
 }
 
