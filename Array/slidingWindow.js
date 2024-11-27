@@ -1,8 +1,8 @@
 function main() {
     const array = [100,200,300,400];
-    const k = 2; // Subarray length
+    const k = 2;
     const result = support(array, k);
-    console.log(result); 
+    console.log(result);
 }
 
 function support(array, k ) {
