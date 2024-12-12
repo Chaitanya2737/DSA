@@ -43,14 +43,27 @@ class linnkedlist{
     }
 
 
+    removeAtFirst(){
+        this.head = this.head.next
+    }
 
+    removeAtEnd(){
+        let temp =  this.head
+        while (temp.next.next != null) {
+            temp= temp.next
+        }
+        temp.next = null
+    }
+    
     printlist(){
         let temp =  this.head;
         let i= 0
         while (temp) {
             console.log(temp.data , i++ )
+            console.log("⬇️")
             temp = temp.next
         }
+        console.log(null)
     }
 }
 
@@ -63,5 +76,8 @@ list.add(16)
 list.add(18)
 list.insertAtEnd(90)
 list.insertAtPosition(2 , 30)
+list.removeAtFirst()
+list.removeAtEnd()
+
 
 list.printlist()
